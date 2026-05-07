@@ -12,6 +12,11 @@ void mostrar_banner(){
     printf("For details type 'warranty'. \n");
 }
 
+void processar_calculo(char *input){
+    double n1,n2;
+    char operacao;
+
+}
 int main(){
 
 }
