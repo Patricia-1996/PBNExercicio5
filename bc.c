@@ -45,13 +45,29 @@ if(sscanf(input, "%lf %c %lf", &n1, &operacao, &n2) == 3){
     }
     else if(strlen(input)> 0){
         //Se não for uma conta valida nem um numero conhecido
-        printf("syntax error\n");
+        printf("syntax error\n")
     }
 }
 
 
 }
+
 int main(){
+    char linha[1024];
+    mostrar_banner();
+
+    //loop infinito como o do terminal
+    while (1)
+    {
+        //o bc nao tem ">", fica apenas esperando em uma linha vazia
+        /* code */
+        if(fgets(linha, sizeof(linha), stdin) == NULL){
+            break;//Sai com ctrl D
+        }
+        //Remove o \n do final da String
+        linha[strcspn]
+    }
+    
 
 }
 
