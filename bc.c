@@ -7,7 +7,7 @@ int scale = 0;
 void mostrar_banner(){
     printf("bc 1.07.1\n");
     printf("Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.");
-    printf("This is free software with ABSOLUTELY NO WARRANTY".\n);
+    printf("This is free software with ABSOLUTELY NO WARRANTY.\n");
     printf("For details type 'warranty'. \n");
 }
 
@@ -38,14 +38,13 @@ if(sscanf(input, "%lf %c %lf", &n1, &operacao, &n2) == 3){
         case'/': 
         if(n2 != 0)
         printf(formato, n1 / n2); 
-        else
-        printf("Runtime error: Divide by zero\n");
+        else printf("Runtime error: Divide by zero\n");
         break;
     default: printf("syntax error\n");
     }
     else if(strlen(input)> 0){
         //Se não for uma conta valida nem um numero conhecido
-        printf("syntax error\n")
+        printf("syntax error\n");
     }
 }
 
