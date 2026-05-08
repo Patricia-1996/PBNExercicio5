@@ -65,8 +65,11 @@ int main(){
             break;//Sai com ctrl D
         }
         //Remove o \n do final da String
-        linha[strcspn]
+        linha[strcspn(linha, "\n")] = 0;
+
+        processar_calculo(linha);
     }
+    return 0;
     
 
 }
