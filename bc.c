@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<string.h>
 
-
 int scale = 0;
 
 void mostrar_banner(){
@@ -15,6 +14,41 @@ void mostrar_banner(){
 void processar_calculo(char *input){
     double n1,n2;
     char operacao;
+
+    //Se o usuário digitar o 'scale=X'
+if(strncmp(input, "scale=", 6)==0 ){
+    scale = atoi(&input[6]);
+    return;
+}
+//Se o usuario digitar 'quit' o programa fecha
+if(strcmp(input, "quit") == 0){
+    exit(0);
+}
+
+//Tenta ler a operação (ex: 10 / 3)
+if(sscanf(input, "%lf %c %lf", &n1, &operacao, &n2) == 3){
+    char formato[20];
+    //Cria dinamicamente o formato de saida baseado no scale atual
+    sprintf(formato, "%%.%df\n", scale);
+
+    switch(operacao){
+        case'+': printf(formato, n1 + n2); break;
+        case'-': printf(formato, n1 - n2); break;
+        case'*': printf(formato, n1 * n2); break;
+        case'/': 
+        if(n2 != 0)
+        printf(formato, n1 / n2); 
+        else
+        printf("Runtime error: Divide by zero\n");
+        break;
+    default: printf("syntax error\n");
+    }
+    else if(strlen(input)> 0){
+        //Se não for uma conta valida nem um numero conhecido
+        printf("syntax error\n");
+    }
+}
+
 
 }
 int main(){
